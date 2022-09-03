@@ -1,0 +1,23 @@
+{% extends 'pizza/base.html' %}
+
+{% block pizza %}
+<form action="" method="post" class="container mt-3">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Order Pizza">
+</form>
+<form action="" method='post' class="container mt-3">
+    {% csrf_token %}
+    {{form_multi.as_p}}
+    <input type="submit" value="Multi Order">
+    {% comment %} <select class="form-select" aria-label="Default select example">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <a class="btn btn-default" href="{% url 'pizza/pizzas.html' pk=post.pk %}"><span ></span></a> {% endcomment %}
+</form>
+    
+{% endblock pizza %}
